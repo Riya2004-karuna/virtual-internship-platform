@@ -1,0 +1,867 @@
+{
+  "info": {
+    "_postman_id": "0778f3d6-9922-4577-80b5-5f1da0f63719",
+    "name": "Mega Fswd",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47855860"
+  },
+  "item": [
+    {
+      "name": "user/register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"name\": \"Riya\",\r\n  \"email\": \"riya@gmail.com\",\r\n  \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/user/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "user",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "verify user",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"activationToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJSaXlhIiwiZW1haWwiOiJyaXlhQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHhFLlJ2d3R1Yk5COTdXdEhtcEVWZS5CM3lxbHVyUDNrVWdsUDZxZUV6RXJqYWNURlpCWXNtIn0sIm90cCI6ODgyMDY2LCJpYXQiOjE3NzMwNzM1MDgsImV4cCI6MTc3MzA3MzgwOH0.U5WU43NXswG22pOVdn5clHUWdnlfWuDrd-fHX3TuudU\",\r\n    \"otp\":882066\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/user/verify",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "user",
+            "verify"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login user",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \r\n  \"email\": \"riya@gmail.com\",\r\n  \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/user/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "user",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "myprofile",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OWFlZjQ4YzQyNjBjNTE4NGEzMzcyNmUiLCJpYXQiOjE3NzMxNTY2MDQsImV4cCI6MTc3NDQ1MjYwNH0.zcCGULtpl2IauJm5onTL10_j5l5u9_MKitw1J8ux1SA",
+            "type": "text"
+          },
+          {
+            "key": "",
+            "value": "",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/user/me",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "user",
+            "me"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "created course",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OWFlZjQ4YzQyNjBjNTE4NGEzMzcyNmUiLCJpYXQiOjE3NzM4NDMyNjAsImV4cCI6MTc3NTEzOTI2MH0.sHZk-GTsF4KoBeiakSN4cZLT-ArdXPE0sNeNOhKIXCA",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "maths",
+              "type": "text",
+              "uuid": "90e6e67f-ae08-4a16-80e6-4a47a93c2b4b"
+            },
+            {
+              "key": "description",
+              "value": "description for ecommerce",
+              "type": "text",
+              "uuid": "8bd39f54-3607-46b7-a727-b272323051e6"
+            },
+            {
+              "key": "category",
+              "value": " web dev",
+              "type": "text",
+              "uuid": "fcda3dae-6156-4547-a49f-1b18e8b2e194"
+            },
+            {
+              "key": "createdBy",
+              "value": "riya",
+              "type": "text",
+              "uuid": "dfad00fa-db94-4bb1-9bf0-ab71827615c9"
+            },
+            {
+              "key": "duration",
+              "value": "5",
+              "type": "text",
+              "uuid": "bcd9de3c-6bc4-4be4-8f32-75927b89affa"
+            },
+            {
+              "key": "price",
+              "value": "1299",
+              "type": "text",
+              "uuid": "04268c89-ed39-435d-8bf3-ee3a1282a58b"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "d761c908-384e-42d0-80e2-1c523ab5f542",
+              "src": "postman-cloud:///1f08e167-345e-42f0-a817-d180b8ec5b86"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/course/new",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "course",
+            "new"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "addlecture",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OWFlZjQ4YzQyNjBjNTE4NGEzMzcyNmUiLCJpYXQiOjE3NzM3OTgxNDQsImV4cCI6MTc3NTA5NDE0NH0.NGPgKYygIF91hR5irBhO6yjRBybJODtTrTo-ys9ho_A",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "Lecture 1",
+              "type": "text",
+              "uuid": "90e6e67f-ae08-4a16-80e6-4a47a93c2b4b"
+            },
+            {
+              "key": "description",
+              "value": "Description",
+              "type": "text",
+              "uuid": "8bd39f54-3607-46b7-a727-b272323051e6"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "444db080-4591-481b-80d6-1555615de7da",
+              "src": "/C:/Users/bhaij/OneDrive/Attachments/Pictures/Pictures/Camera Roll/WIN_20250128_20_28_55_Pro.mp4"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/course/69bab37c1d823fe8d50d866a",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "course",
+            "69bab37c1d823fe8d50d866a"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get all course",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OWFlZjQ4YzQyNjBjNTE4NGEzMzcyNmUiLCJpYXQiOjE3NzM4NDMyNjAsImV4cCI6MTc3NTEzOTI2MH0.sHZk-GTsF4KoBeiakSN4cZLT-ArdXPE0sNeNOhKIXCA",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "maths",
+              "type": "text",
+              "uuid": "90e6e67f-ae08-4a16-80e6-4a47a93c2b4b"
+            },
+            {
+              "key": "description",
+              "value": "description for ecommerce",
+              "type": "text",
+              "uuid": "8bd39f54-3607-46b7-a727-b272323051e6"
+            },
+            {
+              "key": "category",
+              "value": " web dev",
+              "type": "text",
+              "uuid": "fcda3dae-6156-4547-a49f-1b18e8b2e194"
+            },
+            {
+              "key": "createdBy",
+              "value": "riya",
+              "type": "text",
+              "uuid": "dfad00fa-db94-4bb1-9bf0-ab71827615c9"
+            },
+            {
+              "key": "duration",
+              "value": "5",
+              "type": "text",
+              "uuid": "bcd9de3c-6bc4-4be4-8f32-75927b89affa"
+            },
+            {
+              "key": "price",
+              "value": "1299",
+              "type": "text",
+              "uuid": "04268c89-ed39-435d-8bf3-ee3a1282a58b"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "d761c908-384e-42d0-80e2-1c523ab5f542",
+              "src": "postman-cloud:///1f08e167-345e-42f0-a817-d180b8ec5b86"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/course/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "course",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get single course",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OWFlZjQ4YzQyNjBjNTE4NGEzMzcyNmUiLCJpYXQiOjE3NzM4NDMyNjAsImV4cCI6MTc3NTEzOTI2MH0.sHZk-GTsF4KoBeiakSN4cZLT-ArdXPE0sNeNOhKIXCA",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "maths",
+              "type": "text",
+              "uuid": "90e6e67f-ae08-4a16-80e6-4a47a93c2b4b"
+            },
+            {
+              "key": "description",
+              "value": "description for ecommerce",
+              "type": "text",
+              "uuid": "8bd39f54-3607-46b7-a727-b272323051e6"
+            },
+            {
+              "key": "category",
+              "value": " web dev",
+              "type": "text",
+              "uuid": "fcda3dae-6156-4547-a49f-1b18e8b2e194"
+            },
+            {
+              "key": "createdBy",
+              "value": "riya",
+              "type": "text",
+              "uuid": "dfad00fa-db94-4bb1-9bf0-ab71827615c9"
+            },
+            {
+              "key": "duration",
+              "value": "5",
+              "type": "text",
+              "uuid": "bcd9de3c-6bc4-4be4-8f32-75927b89affa"
+            },
+            {
+              "key": "price",
+              "value": "1299",
+              "type": "text",
+              "uuid": "04268c89-ed39-435d-8bf3-ee3a1282a58b"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "d761c908-384e-42d0-80e2-1c523ab5f542",
+              "src": "postman-cloud:///1f08e167-345e-42f0-a817-d180b8ec5b86"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/course/69ba07ba3a586c85e5e938e7",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "course",
+            "69ba07ba3a586c85e5e938e7"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get all lectures",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OWFlZjQ4YzQyNjBjNTE4NGEzMzcyNmUiLCJpYXQiOjE3NzM4NDMyNjAsImV4cCI6MTc3NTEzOTI2MH0.sHZk-GTsF4KoBeiakSN4cZLT-ArdXPE0sNeNOhKIXCA",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "maths",
+              "type": "text",
+              "uuid": "90e6e67f-ae08-4a16-80e6-4a47a93c2b4b"
+            },
+            {
+              "key": "description",
+              "value": "description for ecommerce",
+              "type": "text",
+              "uuid": "8bd39f54-3607-46b7-a727-b272323051e6"
+            },
+            {
+              "key": "category",
+              "value": " web dev",
+              "type": "text",
+              "uuid": "fcda3dae-6156-4547-a49f-1b18e8b2e194"
+            },
+            {
+              "key": "createdBy",
+              "value": "riya",
+              "type": "text",
+              "uuid": "dfad00fa-db94-4bb1-9bf0-ab71827615c9"
+            },
+            {
+              "key": "duration",
+              "value": "5",
+              "type": "text",
+              "uuid": "bcd9de3c-6bc4-4be4-8f32-75927b89affa"
+            },
+            {
+              "key": "price",
+              "value": "1299",
+              "type": "text",
+              "uuid": "04268c89-ed39-435d-8bf3-ee3a1282a58b"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "d761c908-384e-42d0-80e2-1c523ab5f542",
+              "src": "postman-cloud:///1f08e167-345e-42f0-a817-d180b8ec5b86"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/lectures/69bab37c1d823fe8d50d866a",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "lectures",
+            "69bab37c1d823fe8d50d866a"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get single lecture",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OWFlZjQ4YzQyNjBjNTE4NGEzMzcyNmUiLCJpYXQiOjE3NzM4NDMyNjAsImV4cCI6MTc3NTEzOTI2MH0.sHZk-GTsF4KoBeiakSN4cZLT-ArdXPE0sNeNOhKIXCA",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "maths",
+              "type": "text",
+              "uuid": "90e6e67f-ae08-4a16-80e6-4a47a93c2b4b"
+            },
+            {
+              "key": "description",
+              "value": "description for ecommerce",
+              "type": "text",
+              "uuid": "8bd39f54-3607-46b7-a727-b272323051e6"
+            },
+            {
+              "key": "category",
+              "value": " web dev",
+              "type": "text",
+              "uuid": "fcda3dae-6156-4547-a49f-1b18e8b2e194"
+            },
+            {
+              "key": "createdBy",
+              "value": "riya",
+              "type": "text",
+              "uuid": "dfad00fa-db94-4bb1-9bf0-ab71827615c9"
+            },
+            {
+              "key": "duration",
+              "value": "5",
+              "type": "text",
+              "uuid": "bcd9de3c-6bc4-4be4-8f32-75927b89affa"
+            },
+            {
+              "key": "price",
+              "value": "1299",
+              "type": "text",
+              "uuid": "04268c89-ed39-435d-8bf3-ee3a1282a58b"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "d761c908-384e-42d0-80e2-1c523ab5f542",
+              "src": "postman-cloud:///1f08e167-345e-42f0-a817-d180b8ec5b86"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/lecture/69bab8442eea4c019188d91b",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "lecture",
+            "69bab8442eea4c019188d91b"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete lecture",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OWFlZjQ4YzQyNjBjNTE4NGEzMzcyNmUiLCJpYXQiOjE3NzM4NDMyNjAsImV4cCI6MTc3NTEzOTI2MH0.sHZk-GTsF4KoBeiakSN4cZLT-ArdXPE0sNeNOhKIXCA",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "maths",
+              "type": "text",
+              "uuid": "90e6e67f-ae08-4a16-80e6-4a47a93c2b4b"
+            },
+            {
+              "key": "description",
+              "value": "description for ecommerce",
+              "type": "text",
+              "uuid": "8bd39f54-3607-46b7-a727-b272323051e6"
+            },
+            {
+              "key": "category",
+              "value": " web dev",
+              "type": "text",
+              "uuid": "fcda3dae-6156-4547-a49f-1b18e8b2e194"
+            },
+            {
+              "key": "createdBy",
+              "value": "riya",
+              "type": "text",
+              "uuid": "dfad00fa-db94-4bb1-9bf0-ab71827615c9"
+            },
+            {
+              "key": "duration",
+              "value": "5",
+              "type": "text",
+              "uuid": "bcd9de3c-6bc4-4be4-8f32-75927b89affa"
+            },
+            {
+              "key": "price",
+              "value": "1299",
+              "type": "text",
+              "uuid": "04268c89-ed39-435d-8bf3-ee3a1282a58b"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "d761c908-384e-42d0-80e2-1c523ab5f542",
+              "src": "postman-cloud:///1f08e167-345e-42f0-a817-d180b8ec5b86"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/lecture/69bab977fdae64eb59458376",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "lecture",
+            "69bab977fdae64eb59458376"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete course",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OWFlZjQ4YzQyNjBjNTE4NGEzMzcyNmUiLCJpYXQiOjE3NzM4NDMyNjAsImV4cCI6MTc3NTEzOTI2MH0.sHZk-GTsF4KoBeiakSN4cZLT-ArdXPE0sNeNOhKIXCA",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "maths",
+              "type": "text",
+              "uuid": "90e6e67f-ae08-4a16-80e6-4a47a93c2b4b"
+            },
+            {
+              "key": "description",
+              "value": "description for ecommerce",
+              "type": "text",
+              "uuid": "8bd39f54-3607-46b7-a727-b272323051e6"
+            },
+            {
+              "key": "category",
+              "value": " web dev",
+              "type": "text",
+              "uuid": "fcda3dae-6156-4547-a49f-1b18e8b2e194"
+            },
+            {
+              "key": "createdBy",
+              "value": "riya",
+              "type": "text",
+              "uuid": "dfad00fa-db94-4bb1-9bf0-ab71827615c9"
+            },
+            {
+              "key": "duration",
+              "value": "5",
+              "type": "text",
+              "uuid": "bcd9de3c-6bc4-4be4-8f32-75927b89affa"
+            },
+            {
+              "key": "price",
+              "value": "1299",
+              "type": "text",
+              "uuid": "04268c89-ed39-435d-8bf3-ee3a1282a58b"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "d761c908-384e-42d0-80e2-1c523ab5f542",
+              "src": "postman-cloud:///1f08e167-345e-42f0-a817-d180b8ec5b86"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/course/69ba07ba3a586c85e5e938e7",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "course",
+            "69ba07ba3a586c85e5e938e7"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "stats",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OWFlZjQ4YzQyNjBjNTE4NGEzMzcyNmUiLCJpYXQiOjE3NzM4NDMyNjAsImV4cCI6MTc3NTEzOTI2MH0.sHZk-GTsF4KoBeiakSN4cZLT-ArdXPE0sNeNOhKIXCA",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "maths",
+              "type": "text",
+              "uuid": "90e6e67f-ae08-4a16-80e6-4a47a93c2b4b"
+            },
+            {
+              "key": "description",
+              "value": "description for ecommerce",
+              "type": "text",
+              "uuid": "8bd39f54-3607-46b7-a727-b272323051e6"
+            },
+            {
+              "key": "category",
+              "value": " web dev",
+              "type": "text",
+              "uuid": "fcda3dae-6156-4547-a49f-1b18e8b2e194"
+            },
+            {
+              "key": "createdBy",
+              "value": "riya",
+              "type": "text",
+              "uuid": "dfad00fa-db94-4bb1-9bf0-ab71827615c9"
+            },
+            {
+              "key": "duration",
+              "value": "5",
+              "type": "text",
+              "uuid": "bcd9de3c-6bc4-4be4-8f32-75927b89affa"
+            },
+            {
+              "key": "price",
+              "value": "1299",
+              "type": "text",
+              "uuid": "04268c89-ed39-435d-8bf3-ee3a1282a58b"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "d761c908-384e-42d0-80e2-1c523ab5f542",
+              "src": "postman-cloud:///1f08e167-345e-42f0-a817-d180b8ec5b86"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/stats",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "stats"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get my courses",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OWFlZjQ4YzQyNjBjNTE4NGEzMzcyNmUiLCJpYXQiOjE3NzM4NDMyNjAsImV4cCI6MTc3NTEzOTI2MH0.sHZk-GTsF4KoBeiakSN4cZLT-ArdXPE0sNeNOhKIXCA",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "maths",
+              "type": "text",
+              "uuid": "90e6e67f-ae08-4a16-80e6-4a47a93c2b4b"
+            },
+            {
+              "key": "description",
+              "value": "description for ecommerce",
+              "type": "text",
+              "uuid": "8bd39f54-3607-46b7-a727-b272323051e6"
+            },
+            {
+              "key": "category",
+              "value": " web dev",
+              "type": "text",
+              "uuid": "fcda3dae-6156-4547-a49f-1b18e8b2e194"
+            },
+            {
+              "key": "createdBy",
+              "value": "riya",
+              "type": "text",
+              "uuid": "dfad00fa-db94-4bb1-9bf0-ab71827615c9"
+            },
+            {
+              "key": "duration",
+              "value": "5",
+              "type": "text",
+              "uuid": "bcd9de3c-6bc4-4be4-8f32-75927b89affa"
+            },
+            {
+              "key": "price",
+              "value": "1299",
+              "type": "text",
+              "uuid": "04268c89-ed39-435d-8bf3-ee3a1282a58b"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "d761c908-384e-42d0-80e2-1c523ab5f542",
+              "src": "postman-cloud:///1f08e167-345e-42f0-a817-d180b8ec5b86"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/mycourse",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "mycourse"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
