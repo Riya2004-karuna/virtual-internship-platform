@@ -1,35 +1,45 @@
-import React from 'react';
-import  "./auth.css";
-import { Link } from 'react-router-dom';
-export const Register = () => {
-  return ( <div className="auth-page">
-       <div className="auth-form"> 
-         <h2> Register  </h2>
-         <form> 
+import { useState } from "react";
+import "./auth.css";
+import { Link, useNavigate } from "react-router-dom";
+import { UserData } from "../../context/UserContext";
 
-            <label htmlFor="name"> Name </label>
-            <input type="text" required />
+const Register = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const { btnLoading, registerUser } = UserData();
 
-            <label htmlFor="email">Email </label>
-            <input type="email" required />
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    await registerUser(name, email, password, navigate);
+  };
 
+  return (
+    <div className="auth-page">
+      <div className="auth-form">
+        <h2>Register</h2>
+        <form onSubmit={submitHandler}>
+          <label htmlFor="name">Name</label>
+          <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} required />
 
-            <label htmlFor="password">Password </label>
-            <input type="password" required />
+          <label htmlFor="email">Email</label>
+          <input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
 
+          <label htmlFor="password">Password</label>
+          <input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
 
-            <button  className='common-btn'>Register</button>
-
-
-         </form>
+          <button type="submit" disabled={btnLoading} className="common-btn">
+            {btnLoading ? "please wait..." : "Register"}
+          </button>
+        </form>
 
         <p>
-   have an account <Link to="/login">Login</Link>
-</p>
-    
-        </div>
-    </div>);
-  
+          Have an account? <Link to="/login">Login</Link>
+        </p>
+      </div>
+    </div>
+  );
 };
 
 export default Register;

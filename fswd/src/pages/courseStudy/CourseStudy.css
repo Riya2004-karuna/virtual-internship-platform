@@ -1,0 +1,50 @@
+.course-study-page {
+  min-height: 60vh;
+  padding: 56px 20px;
+}
+
+.course-study-card {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  max-width: 980px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.course-study-image {
+  width: 340px;
+  max-width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.course-study-info {
+  flex: 1;
+}
+
+.course-study-info h2 {
+  color: #8a4baf;
+  margin-bottom: 14px;
+}
+
+.course-study-info p {
+  color: #444;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .course-study-card {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px;
+  }
+
+  .course-study-image {
+    width: 100%;
+  }
+}

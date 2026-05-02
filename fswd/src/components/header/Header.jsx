@@ -1,9 +1,7 @@
-import React from 'react';
-
 import "./header.css";
 import { Link } from 'react-router-dom';
 
-export const Header = () => {
+export const Header = ({ isAuth, user }) => {
   return (
 
     <header>
@@ -15,7 +13,19 @@ export const Header = () => {
             < Link to={'/'}>Home</Link>
             <Link  to={'/courses'}>Courses</Link>
             <Link  to={'/about'}>About</Link>
-            <Link  to={'/account'}>Account</Link>
+            {isAuth && user?.role === "admin" && (
+              <Link to={"/admin/dashboard"}>Dashboard</Link>
+            )}
+            {isAuth ?(
+
+              < Link to={"/account"}>Account</Link>
+            ):(
+
+              <Link to={'/login'}>Login</Link>
+
+            )
+
+            }
 
 
 

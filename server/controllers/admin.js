@@ -1,129 +1,151 @@
 import TryCatch from "../middleware/TryCatch.js";
 import { Courses } from "../models/Courses.js";
 import { Lecture } from "../models/Lecture.js";
-import {rm} from "fs";
-import{promisify} from 'util';
-import fs from 'fs';
+import { promisify } from "util";
+import fs from "fs";
 import { User } from "../models/User.js";
 
-export  const createCourse =TryCatch(async(req,res)=>{
-    const {title,description,category,createdBy,duration,price}=req.body;
-    const image =req.file;
+const unlinkAsync = promisify(fs.unlink);
 
+async function removeFileIfExists(path) {
+    if (!path) return;
+
+    try {
+        await unlinkAsync(path);
+    } catch (error) {
+        if (error.code !== "ENOENT") {
+            console.error(`Failed to delete file ${path}:`, error.message);
+        }
+    }
+}
+
+export const createCourse = TryCatch(async (req, res) => {
+    const { title, description, category, createdBy, duration, price } = req.body;
+    const image = req.file;
 
     await Courses.create({
-    title,
-    description,
-    category,
-    createdBy,
-    image:image?.path,
-    duration,       
-    price,
-
+        title,
+        description,
+        category,
+        createdBy,
+        image: image?.path,
+        duration,
+        price,
     });
 
     res.status(201).json({
-        message:"Courses created successfully",
-
+        message: "Courses created successfully",
     });
-  
-  
-
 });
 
+export const updateCourse = TryCatch(async (req, res) => {
+    const course = await Courses.findById(req.params.id);
 
-// for the saving the image in server we use the multer..
+    if (!course) {
+        return res.status(404).json({
+            message: "Course not found",
+        });
+    }
 
+    const { title, description, category, createdBy, duration, price } = req.body;
 
+    if (title !== undefined) course.title = title;
+    if (description !== undefined) course.description = description;
+    if (category !== undefined) course.category = category;
+    if (createdBy !== undefined) course.createdBy = createdBy;
+    if (duration !== undefined) course.duration = duration;
+    if (price !== undefined) course.price = price;
 
-export const addLectures = TryCatch(async(req,res)=>{
+    if (req.file) {
+        if (course.image) {
+            await removeFileIfExists(course.image);
+        }
 
-const course = await Courses.findById(req.params.id);// i want to find the lecture byt he id
-if(!course)
-    return res.status(404).json({
-    message:"no courses with this id",// for this if nor get the lecture
+        course.image = req.file.path;
+    }
+
+    await course.save();
+
+    res.json({
+        message: "Course updated successfully",
+        course,
     });
+});
 
-    // what if we got the lecture we get extract the following things
+export const addLectures = TryCatch(async (req, res) => {
+    const course = await Courses.findById(req.params.id);
+    if (!course)
+        return res.status(404).json({
+            message: "no courses with this id",
+        });
 
+    const { title, description } = req.body;
+    if (!req.file) {
+        return res.status(400).json({
+            message: "Lecture video is required",
+        });
+    }
 
-    const {title,description}=req.body
-
-    const file = req.file
-
-// by following this lecture was created
     const lecture = await Lecture.create({
         title,
         description,
-        video:req.file.filename,
-        course:course._id,                                
+        video: req.file.filename,
+        course: course._id,
     });
 
     res.status(201).json({
-    message:"Lecture added",
-    lecture,
-
+        message: "Lecture added",
+        lecture,
     });
-  
 });
 
-
-// for the delet lecture
-
-export const deleteLecture = TryCatch(async(req,res)=>{
+export const deleteLecture = TryCatch(async (req, res) => {
     const lecture = await Lecture.findById(req.params.id);
+    if (!lecture) {
+        return res.status(404).json({
+            message: "Lecture not found",
+        });
+    }
 
-// removing only one video
-    rm(lecture.video,()=>{
-        console.log("Video deleted");
-
-    });
-
-    // also delete from the db..
+    await removeFileIfExists(`uploads/${lecture.video}`);
 
     await lecture.deleteOne();
-    res.json({message:"Lecture Deleted"});
-
+    res.json({ message: "Lecture Deleted" });
 });
 
-const unlikeAsync = promisify(fs.unlink)
+export const deleteCourse = TryCatch(async (req, res) => {
+    const course = await Courses.findById(req.params.id);
+    if (!course) {
+        return res.status(404).json({
+            message: "Course not found",
+        });
+    }
 
-export const deleteCourse = TryCatch(async(req,res)=>{
-    const course = await Courses.findById(req.params.id)
+    const lectures = await Lecture.find({ course: course._id });
 
-    const lectures = await Lecture.find({course: course._id})
-
-    // delete the all courses
     await Promise.all(
-        lectures.map(async(lecture)=>{
-            await unlikeAsync(lecture.video);
+        lectures.map(async (lecture) => {
+            await removeFileIfExists(`uploads/${lecture.video}`);
             console.log("video deleted");
         })
     );
 
-    rm(course.image,()=>{
-        console.log("image deleted");
+    await removeFileIfExists(course.image);
 
-    });
-
-    await Lecture.find({course:req.params.id}).deleteMany();
-    //delete from the db
+    await Lecture.find({ course: req.params.id }).deleteMany();
     await course.deleteOne();
-    await User.updateMany({},{$pull:{Subscription:req.params.id}});
+    await User.updateMany({}, { $pull: { courses: req.params.id } });
     res.json({
-        message:"Course deleted",
+        message: "Course deleted",
     });
-
 });
 
-
-export const getAllStats = TryCatch(async(req , res)=>{
+export const getAllStats = TryCatch(async (req, res) => {
     const totalCoures = (await Courses.find()).length;
     const totalLectures = (await Lecture.find()).length;
-    const totalUsers =(await User.find()).length;
+    const totalUsers = (await User.find()).length;
 
-
-    const stats ={
+    const stats = {
         totalCoures,
         totalLectures,
         totalUsers,
@@ -133,3 +155,4 @@ export const getAllStats = TryCatch(async(req , res)=>{
         stats,
     });
 });
+

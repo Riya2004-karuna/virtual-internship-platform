@@ -2,19 +2,21 @@ import { createTransport } from "nodemailer"
 
 const sendMail =async(email,subject,data) => {
 
+    const gmailUser = process.env.Gmail?.trim();
+    const gmailPassword = process.env.Password?.replace(/\s/g, "");
+
+    if (!gmailUser || !gmailPassword) {
+        throw new Error("Email service is not configured. Please set Gmail and Password in server/.env.");
+    }
 
     const transport = createTransport({
-        host: "smtp.gmail.com",
-        service:"gamil",
-        secure:true,
+        service:"gmail",
         auth:{
-            user:process.env.Gmail,
-            pass:process.env.Password,
+            user:gmailUser,
+            pass:gmailPassword,
         }                
 
     });
-    console.log(process.env.Gmail);
-console.log(process.env.Password);
      
 
     const html = `<!DOCTYPE html>
@@ -67,13 +69,18 @@ console.log(process.env.Password);
 
 
 
-    await transport.sendMail({
-        from: process.env.Gmail,
+    try {
+        await transport.sendMail({
+        from: gmailUser,
         to:email,
         subject,
         html,
 
-    });
+        });
+    } catch (error) {
+        console.error("Mail send failed:", error.message);
+        throw new Error("Could not send OTP email. Create a new Google App Password for the same Gmail account and update Password in server/.env.");
+    }
 };
 
 

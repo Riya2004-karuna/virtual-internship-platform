@@ -1,0 +1,35 @@
+.courses {
+  min-height: 55vh;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.courses-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.courses-content h2 {
+  font-size: 32px;
+  color: blueviolet;
+  margin-bottom: 12px;
+}
+
+.courses-content p {
+  color: #555;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.course-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.no-courses {
+  font-size: 18px;
+  color: #666;
+  padding: 32px 0;
+}

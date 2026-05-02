@@ -1,8 +1,5 @@
 import React from 'react';
 import './footer.css';
-import { AiFillFacebook } from "react-icons/ai";
-import { FaInstagram } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -15,9 +12,9 @@ const Footer = () => {
         </p>
 
         <div className="social-links">
-          <a href="#"><AiFillFacebook /></a>
-          <a href="#"><FaInstagram/></a>
-          <a href="#"><FaGithub/></a>
+          <a href="#" aria-label="Facebook">Facebook</a>
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="GitHub">GitHub</a>
         </div>
       </div>
     </footer>

@@ -28,9 +28,9 @@ const schema  = new mongoose.Schema({
         default:"user",
     },
 
-    Subscription:[{
+    courses:[{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"Course",
+        ref:"Courses",
     },
 ],
 },{

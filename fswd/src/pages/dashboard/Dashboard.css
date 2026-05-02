@@ -1,0 +1,49 @@
+.student-dashboard {
+  max-width: 1180px;
+  min-height: 60vh;
+  margin: 0 auto;
+  padding: 44px 20px;
+}
+
+.student-dashboard__header {
+  margin-bottom: 24px;
+}
+
+.student-dashboard__header h2 {
+  margin: 0 0 8px;
+  color: #222;
+  font-size: 30px;
+}
+
+.student-dashboard__header p {
+  margin: 0;
+  color: #555;
+}
+
+.student-dashboard__courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.student-dashboard__empty {
+  width: 100%;
+  padding: 36px 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  color: #555;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 768px) {
+  .student-dashboard {
+    padding: 28px 14px;
+  }
+
+  .student-dashboard__courses {
+    justify-content: center;
+  }
+}

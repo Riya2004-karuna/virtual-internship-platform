@@ -1,56 +1,40 @@
-header{
- display: flex;
- justify-content: space-between ;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: cornsilk;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
 
- align-items: center;
- padding: 20px;
- background-color: cornsilk;
- box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
- position: relative;
+header .logo {
+  font-size: 25px;
+  font-weight: 600;
+  color: crimson;
+}
 
+header .link {
+  display: flex;
+  gap: 2rem;
+}
 
- .logo{
-    font-size: 25px;
-    font-weight: 600;
-    color: crimson ;
+header .link a {
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+}
 
-    @media  (max-width: 768px){
+header .link a:hover {
+  color: blue;
+}
 
-        font-size: 18px;
-    }
-        
-    }
+@media (max-width: 768px) {
+  header .logo {
+    font-size: 18px;
+  }
 
-
-    .link{
-
-        display: flex;
-        gap: 2rem;
-        @media  (max-width: 768px){
-
-       gap: 0.5rem;
-    }
-
-    a{
-
-        text-decoration: none;
-        color: black ;
-        transition:0.3s ;
-
-       /* when we go tot he tab then color: may change while the arrow on the tab;*/
-        &:hover{
-
-            color: blue ;
-        }
-
-
-    }
-
-    }
- }
- 
- 
-
-
-
-
+  header .link {
+    gap: 0.5rem;
+  }
+}

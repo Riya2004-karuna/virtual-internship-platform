@@ -132,13 +132,13 @@
       "response": []
     },
     {
-      "name": "created course",
+      "name": "create Java course",
       "request": {
         "method": "POST",
         "header": [
           {
             "key": "token",
-            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OWFlZjQ4YzQyNjBjNTE4NGEzMzcyNmUiLCJpYXQiOjE3NzM4NDMyNjAsImV4cCI6MTc3NTEzOTI2MH0.sHZk-GTsF4KoBeiakSN4cZLT-ArdXPE0sNeNOhKIXCA",
+            "value": "PASTE_ADMIN_TOKEN_HERE",
             "type": "text"
           }
         ],
@@ -147,45 +147,172 @@
           "formdata": [
             {
               "key": "title",
-              "value": "maths",
-              "type": "text",
-              "uuid": "90e6e67f-ae08-4a16-80e6-4a47a93c2b4b"
+              "value": "Java",
+              "type": "text"
             },
             {
               "key": "description",
-              "value": "description for ecommerce",
-              "type": "text",
-              "uuid": "8bd39f54-3607-46b7-a727-b272323051e6"
+              "value": "Complete Java programming course for beginners with practical concepts.",
+              "type": "text"
             },
             {
               "key": "category",
-              "value": " web dev",
-              "type": "text",
-              "uuid": "fcda3dae-6156-4547-a49f-1b18e8b2e194"
+              "value": "Programming",
+              "type": "text"
             },
             {
               "key": "createdBy",
-              "value": "riya",
-              "type": "text",
-              "uuid": "dfad00fa-db94-4bb1-9bf0-ab71827615c9"
+              "value": "Prashant Kumar",
+              "type": "text"
             },
             {
               "key": "duration",
               "value": "5",
-              "type": "text",
-              "uuid": "bcd9de3c-6bc4-4be4-8f32-75927b89affa"
+              "type": "text"
             },
             {
               "key": "price",
               "value": "1299",
-              "type": "text",
-              "uuid": "04268c89-ed39-435d-8bf3-ee3a1282a58b"
+              "type": "text"
             },
             {
               "key": "file",
               "type": "file",
-              "uuid": "d761c908-384e-42d0-80e2-1c523ab5f542",
-              "src": "postman-cloud:///1f08e167-345e-42f0-a817-d180b8ec5b86"
+              "src": "C:\\Users\\bhaij\\OneDrive\\Desktop\\Third year\\6 th sem\\fswd\\mega\\fswd\\src\\assets\\Java.png"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/course/new",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "course",
+            "new"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create Python course",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "token",
+            "value": "PASTE_ADMIN_TOKEN_HERE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "Python",
+              "type": "text"
+            },
+            {
+              "key": "description",
+              "value": "Learn Python fundamentals, problem solving, and real project basics.",
+              "type": "text"
+            },
+            {
+              "key": "category",
+              "value": "Programming",
+              "type": "text"
+            },
+            {
+              "key": "createdBy",
+              "value": "Prashant Kumar",
+              "type": "text"
+            },
+            {
+              "key": "duration",
+              "value": "4",
+              "type": "text"
+            },
+            {
+              "key": "price",
+              "value": "1199",
+              "type": "text"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "src": "C:\\Users\\bhaij\\OneDrive\\Desktop\\Third year\\6 th sem\\fswd\\mega\\fswd\\src\\assets\\Java.png"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/course/new",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "course",
+            "new"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create Web Development course",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "token",
+            "value": "PASTE_ADMIN_TOKEN_HERE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "Web Development",
+              "type": "text"
+            },
+            {
+              "key": "description",
+              "value": "Understand HTML, CSS, JavaScript, and responsive website building.",
+              "type": "text"
+            },
+            {
+              "key": "category",
+              "value": "Web Development",
+              "type": "text"
+            },
+            {
+              "key": "createdBy",
+              "value": "Prashant Kumar",
+              "type": "text"
+            },
+            {
+              "key": "duration",
+              "value": "6",
+              "type": "text"
+            },
+            {
+              "key": "price",
+              "value": "1499",
+              "type": "text"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "src": "C:\\Users\\bhaij\\OneDrive\\Desktop\\Third year\\6 th sem\\fswd\\mega\\fswd\\src\\assets\\hero.png"
             }
           ]
         },
@@ -274,7 +401,7 @@
           "formdata": [
             {
               "key": "title",
-              "value": "maths",
+              "value": "Java",
               "type": "text",
               "uuid": "90e6e67f-ae08-4a16-80e6-4a47a93c2b4b"
             },
@@ -286,7 +413,7 @@
             },
             {
               "key": "category",
-              "value": " web dev",
+              "value": "Programming",
               "type": "text",
               "uuid": "fcda3dae-6156-4547-a49f-1b18e8b2e194"
             },
@@ -312,7 +439,7 @@
               "key": "file",
               "type": "file",
               "uuid": "d761c908-384e-42d0-80e2-1c523ab5f542",
-              "src": "postman-cloud:///1f08e167-345e-42f0-a817-d180b8ec5b86"
+              "src": "C:\\Users\\bhaij\\OneDrive\\Desktop\\Third year\\6 th sem\\fswd\\mega\\fswd\\src\\assets\\Java.png"
             }
           ]
         },
@@ -351,7 +478,7 @@
           "formdata": [
             {
               "key": "title",
-              "value": "maths",
+              "value": "Java",
               "type": "text",
               "uuid": "90e6e67f-ae08-4a16-80e6-4a47a93c2b4b"
             },
@@ -363,7 +490,7 @@
             },
             {
               "key": "category",
-              "value": " web dev",
+              "value": "Programming",
               "type": "text",
               "uuid": "fcda3dae-6156-4547-a49f-1b18e8b2e194"
             },
@@ -389,7 +516,7 @@
               "key": "file",
               "type": "file",
               "uuid": "d761c908-384e-42d0-80e2-1c523ab5f542",
-              "src": "postman-cloud:///1f08e167-345e-42f0-a817-d180b8ec5b86"
+              "src": "C:\\Users\\bhaij\\OneDrive\\Desktop\\Third year\\6 th sem\\fswd\\mega\\fswd\\src\\assets\\Java.png"
             }
           ]
         },
@@ -428,7 +555,7 @@
           "formdata": [
             {
               "key": "title",
-              "value": "maths",
+              "value": "Java",
               "type": "text",
               "uuid": "90e6e67f-ae08-4a16-80e6-4a47a93c2b4b"
             },
@@ -440,7 +567,7 @@
             },
             {
               "key": "category",
-              "value": " web dev",
+              "value": "Programming",
               "type": "text",
               "uuid": "fcda3dae-6156-4547-a49f-1b18e8b2e194"
             },
@@ -466,7 +593,7 @@
               "key": "file",
               "type": "file",
               "uuid": "d761c908-384e-42d0-80e2-1c523ab5f542",
-              "src": "postman-cloud:///1f08e167-345e-42f0-a817-d180b8ec5b86"
+              "src": "C:\\Users\\bhaij\\OneDrive\\Desktop\\Third year\\6 th sem\\fswd\\mega\\fswd\\src\\assets\\Java.png"
             }
           ]
         },
@@ -505,7 +632,7 @@
           "formdata": [
             {
               "key": "title",
-              "value": "maths",
+              "value": "Java",
               "type": "text",
               "uuid": "90e6e67f-ae08-4a16-80e6-4a47a93c2b4b"
             },
@@ -517,7 +644,7 @@
             },
             {
               "key": "category",
-              "value": " web dev",
+              "value": "Programming",
               "type": "text",
               "uuid": "fcda3dae-6156-4547-a49f-1b18e8b2e194"
             },
@@ -543,7 +670,7 @@
               "key": "file",
               "type": "file",
               "uuid": "d761c908-384e-42d0-80e2-1c523ab5f542",
-              "src": "postman-cloud:///1f08e167-345e-42f0-a817-d180b8ec5b86"
+              "src": "C:\\Users\\bhaij\\OneDrive\\Desktop\\Third year\\6 th sem\\fswd\\mega\\fswd\\src\\assets\\Java.png"
             }
           ]
         },
@@ -579,7 +706,7 @@
           "formdata": [
             {
               "key": "title",
-              "value": "maths",
+              "value": "Java",
               "type": "text",
               "uuid": "90e6e67f-ae08-4a16-80e6-4a47a93c2b4b"
             },
@@ -591,7 +718,7 @@
             },
             {
               "key": "category",
-              "value": " web dev",
+              "value": "Programming",
               "type": "text",
               "uuid": "fcda3dae-6156-4547-a49f-1b18e8b2e194"
             },
@@ -617,7 +744,7 @@
               "key": "file",
               "type": "file",
               "uuid": "d761c908-384e-42d0-80e2-1c523ab5f542",
-              "src": "postman-cloud:///1f08e167-345e-42f0-a817-d180b8ec5b86"
+              "src": "C:\\Users\\bhaij\\OneDrive\\Desktop\\Third year\\6 th sem\\fswd\\mega\\fswd\\src\\assets\\Java.png"
             }
           ]
         },
@@ -653,7 +780,7 @@
           "formdata": [
             {
               "key": "title",
-              "value": "maths",
+              "value": "Java",
               "type": "text",
               "uuid": "90e6e67f-ae08-4a16-80e6-4a47a93c2b4b"
             },
@@ -665,7 +792,7 @@
             },
             {
               "key": "category",
-              "value": " web dev",
+              "value": "Programming",
               "type": "text",
               "uuid": "fcda3dae-6156-4547-a49f-1b18e8b2e194"
             },
@@ -691,7 +818,7 @@
               "key": "file",
               "type": "file",
               "uuid": "d761c908-384e-42d0-80e2-1c523ab5f542",
-              "src": "postman-cloud:///1f08e167-345e-42f0-a817-d180b8ec5b86"
+              "src": "C:\\Users\\bhaij\\OneDrive\\Desktop\\Third year\\6 th sem\\fswd\\mega\\fswd\\src\\assets\\Java.png"
             }
           ]
         },
@@ -730,7 +857,7 @@
           "formdata": [
             {
               "key": "title",
-              "value": "maths",
+              "value": "Java",
               "type": "text",
               "uuid": "90e6e67f-ae08-4a16-80e6-4a47a93c2b4b"
             },
@@ -742,7 +869,7 @@
             },
             {
               "key": "category",
-              "value": " web dev",
+              "value": "Programming",
               "type": "text",
               "uuid": "fcda3dae-6156-4547-a49f-1b18e8b2e194"
             },
@@ -768,7 +895,7 @@
               "key": "file",
               "type": "file",
               "uuid": "d761c908-384e-42d0-80e2-1c523ab5f542",
-              "src": "postman-cloud:///1f08e167-345e-42f0-a817-d180b8ec5b86"
+              "src": "C:\\Users\\bhaij\\OneDrive\\Desktop\\Third year\\6 th sem\\fswd\\mega\\fswd\\src\\assets\\Java.png"
             }
           ]
         },
@@ -806,7 +933,7 @@
           "formdata": [
             {
               "key": "title",
-              "value": "maths",
+              "value": "Java",
               "type": "text",
               "uuid": "90e6e67f-ae08-4a16-80e6-4a47a93c2b4b"
             },
@@ -818,7 +945,7 @@
             },
             {
               "key": "category",
-              "value": " web dev",
+              "value": "Programming",
               "type": "text",
               "uuid": "fcda3dae-6156-4547-a49f-1b18e8b2e194"
             },
@@ -844,7 +971,7 @@
               "key": "file",
               "type": "file",
               "uuid": "d761c908-384e-42d0-80e2-1c523ab5f542",
-              "src": "postman-cloud:///1f08e167-345e-42f0-a817-d180b8ec5b86"
+              "src": "C:\\Users\\bhaij\\OneDrive\\Desktop\\Third year\\6 th sem\\fswd\\mega\\fswd\\src\\assets\\Java.png"
             }
           ]
         },
@@ -858,6 +985,170 @@
           "path": [
             "api",
             "mycourse"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update course",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "token",
+            "value": "PASTE_ADMIN_TOKEN_HERE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "Java",
+              "type": "text"
+            },
+            {
+              "key": "description",
+              "value": "Updated Java course description",
+              "type": "text"
+            },
+            {
+              "key": "category",
+              "value": "Programming",
+              "type": "text"
+            },
+            {
+              "key": "createdBy",
+              "value": "Prashant Kumar",
+              "type": "text"
+            },
+            {
+              "key": "duration",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "price",
+              "value": "1299",
+              "type": "text"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "src": "C:\\Users\\bhaij\\OneDrive\\Desktop\\Third year\\6 th sem\\fswd\\mega\\fswd\\src\\assets\\Java.png"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/course/PASTE_COURSE_ID_HERE",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "course",
+            "PASTE_COURSE_ID_HERE"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "checkout course",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "token",
+            "value": "PASTE_USER_TOKEN_HERE",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/course/checkout/PASTE_COURSE_ID_HERE",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "course",
+            "checkout",
+            "PASTE_COURSE_ID_HERE"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "payment verification",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "token",
+            "value": "PASTE_USER_TOKEN_HERE",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"razorpay_order_id\": \"PASTE_ORDER_ID_HERE\",\n  \"razorpay_payment_id\": \"PASTE_PAYMENT_ID_HERE\",\n  \"razorpay_signature\": \"PASTE_SIGNATURE_HERE\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/course/payment-verification/PASTE_COURSE_ID_HERE",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "course",
+            "payment-verification",
+            "PASTE_COURSE_ID_HERE"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get razorpay key",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "token",
+            "value": "PASTE_USER_TOKEN_HERE",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/payment/key",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "payment",
+            "key"
           ]
         }
       },

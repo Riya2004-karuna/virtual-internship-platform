@@ -29,7 +29,7 @@ export const register = TryCatch(async(req,res)=>{
     }
 
 
-    const otp = Math.floor(Math.random() * 1000000);
+    const otp = String(Math.floor(100000 + Math.random() * 900000));
 
     const activationToken = jwt.sign({
         user,
@@ -47,15 +47,27 @@ export const register = TryCatch(async(req,res)=>{
             
             
 
-            await sendMail(
-                email,
-                "mega fswd",
-                data
-            )
+            let devOtp;
+
+            try {
+                await sendMail(
+                    email,
+                    "mega fswd",
+                    data
+                )
+            } catch (error) {
+                if (process.env.NODE_ENV === "production") {
+                    throw error;
+                }
+
+                devOtp = otp;
+                console.warn("OTP email failed. Development OTP:", otp);
+            }
 
             res.status(200).json({
-                message:"otp send to your mail",
+                message: devOtp ? "OTP email failed, use the development OTP shown here" : "otp send to your mail",
                 activationToken,
+                devOtp,
 
             });
 
@@ -65,14 +77,22 @@ export const register = TryCatch(async(req,res)=>{
 export const verifyUser = TryCatch(async(req,res)=>{
     const {otp ,activationToken} = req.body
 
+    if (!activationToken) {
+        return res.status(400).json({
+            message:"Activation token missing",
+        });
+    }
+
     const verify = jwt.verify(activationToken,process.env.Activation_Secret)
     if (!verify) 
     return res.status(400).json({
         message:"Otp Expired",
     })  ; 
 
+    const receivedOtp = String(otp ?? "").trim();
+    const storedOtp = String(verify.otp ?? "").trim();
 
-    if(verify.otp !== Number(otp))
+    if(storedOtp !== receivedOtp)
          return  res.status(400).json({
         message:"Otp wrong ",
     })  ;  
@@ -98,14 +118,14 @@ export const loginUser = TryCatch(async(req,res)=>{
     const {email,password} =req.body
     const user =await User.findOne({email})
 
-    if(!user) return res.status(404).json({
-        message: 'no User with this email',
+    if(!user) return res.status(401).json({
+        message: 'No account found with this email. Please register and verify your OTP first.',
     });
 
 
     const mathPassword =await bcrypt.compare(password,user.password);
 
-    if(!mathPassword) return res.status(400).json({
+    if(!mathPassword) return res.status(401).json({
         message:"Wrong password",
     });
 
